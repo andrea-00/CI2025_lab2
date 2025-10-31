@@ -37,6 +37,11 @@ The raw tuning data was analyzed to select a single "winner."
 * **Process:** Convergence speed and final solution quality (normalized as `% Improvement over Baseline`) were compared using box plots and line plots.
 * **Notebook:** `notebooks/01_tuning_analysis.ipynb`
 
+The analysis compared the final performance distribution of all 12 strategy combinations (as seen in the full boxplot) and their convergence speed (top 5 shown below).
+
+![Full Strategy Boxplot](experiments/01_tuning_quality_boxplot.jpg)
+![Top 5 Convergence Plot](experiments/01_tuning_convergence_plot.jpg)
+
 ### Stage 4: Final Showcase
 The "winning" strategy was run on **all 21 problems** to get a final, unbiased measure of its performance.
 * **Process:** The single best strategy was run `20` times on *all* valid problems.
@@ -90,20 +95,18 @@ This strategy achieved an **overall average improvement of [10.4]%** over the op
 ### Plot 1: Performance vs. Problem Size
 This plot shows the *distribution* of performance (`% Improvement`) for the winning strategy, grouped by problem size. It highlights how the EA's advantage changes as problems become more complex.
 
-**(![Paste your `plot_01_improvement_by_size.png` image here](experiments/plot_01_improvement_by_size.png))**
-``
+![EA Performance vs. Problem Size](experiments/plot_01_improvement_by_size.png)
 
 **Analysis:** 
-The EA shows a dominant advantage on medium-sized problems (50-200 cities), where it consistently beats the HC baseline. Its performance drops on very large problems (500-1000 cities), indicating that a larger evaluation budget is likely needed.
+The plot clearly shows the EA (Shape_Deep...) underperforms on small (10, 20) and very large (500, 1000) problems, but significantly outperforms the HC baseline on medium-sized problems (50, 100, 200).
 
-### Plot 2: Per-Problem Convergence Curves
-This plot grid shows the mean convergence curve (over 20 runs) for the EA strategies compared to the final HC baseline (red dashed line) for each valid problem.
+### Plot 2: Absolute Fitness: EA vs. Hill Climber Baseline
+This plot directly compares the *mean final fitness* of the winning EA strategy against the *best final fitness* of the Hill Climber baseline for each problem size.
 
-**(![Paste your `plot_03_all_convergences.png` image here](experiments/plot_02_absolute_fitness.png))**
-``
+![Absolute Fitness: EA vs. HC](experiments/plot_02_absolute_fitness.png)
 
 **Analysis:** 
-The plots show the EA surpassing the final HC baseline (red dashed line) on avarage.
+This plot confirms the findings from Plot 1. The EA (blue bar) finds better solutions (less negative fitness) for sizes 50-200, while the HC (orange bar) finds better absolute solutions for the largest problems (500, 1000) within the given computational budget.
 
 ## 5. About the `evolvepy` Framework
 
