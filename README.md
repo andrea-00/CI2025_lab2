@@ -39,8 +39,8 @@ The raw tuning data was analyzed to select a single "winner."
 
 The analysis compared the final performance distribution of all 12 strategy combinations (as seen in the full boxplot) and their convergence speed (top 5 shown below).
 
-![Full Strategy Boxplot](experiments/01_tuning_quality_boxplot.jpg)
-![Top 5 Convergence Plot](experiments/01_tuning_convergence_plot.jpg)
+![Full Strategy Boxplot](experiments/01_tuning_quality_boxplot.png)
+![Top 5 Convergence Plot](experiments/01_tuning_convergence_plot.png)
 
 ### Stage 4: Final Showcase
 The "winning" strategy was run on **all 21 problems** to get a final, unbiased measure of its performance.
