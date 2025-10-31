@@ -1,0 +1,10 @@
+# Standard library
+numpy
+pandas
+matplotlib
+seaborn
+jupyter
+tqdm
+
+# EA framework from git
+git+https://github.com/andrea-00/evolvepy.git@v0.1.0
